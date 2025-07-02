@@ -19,11 +19,11 @@ export const ut_openNewWin = (_url: string): void => {
   } else {
     const a: HTMLAnchorElement = window.document.createElement('a');
     a.id = 'newWindow';
-    a.href = 'javascript:void(0)';
+    a.href = _url; //'javascript:void(0)';
     a.target = '_blank';
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    a.onclick = window.open(_url);
+    // a.onclick = () => {
+    //   window.open(_url);
+    // };
     document.body.appendChild(a);
     a.click();
     a.remove();

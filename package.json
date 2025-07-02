@@ -1,11 +1,11 @@
 {
   "name": "@bsnbase/utils",
-  "version": "1.0.1",
+  "version": "1.2.3",
   "description": "",
   "main": "dist/index.js",
   "typings": "dist/es/src/index.d.ts",
   "scripts": {
-    "push": "npm publish --registry http://npm.bsntt.top:4873/ && npm publish --access public --registry https://registry.npmjs.org",
+    "push": "npm publish --registry http://npm.bsnweb.site/ && npm publish --access public --registry https://registry.npmjs.org",
     "test": "jest",
     "dev": "rollup -c -w",
     "build": "rollup -c",
