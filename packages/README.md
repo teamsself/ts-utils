@@ -1,4 +1,4 @@
-# library-tools
+# @bsnbase/utils
 
 工具函数库
 
@@ -348,7 +348,7 @@ cssUtils.setCSSPropertyValue("-color-primary","rgb(255, 255, 255)");
 
 ## ByteUtils: Byte转换
 
-```ts	
+```ts
 // 获取随机 Uint8Array (default:16)
 const byteUtils = ByteUtils.random(number);
 
