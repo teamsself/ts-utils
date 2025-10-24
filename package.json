@@ -1,15 +1,26 @@
 {
   "name": "@bsnbase/utils",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "",
-  "main": "dist/index.js",
-  "typings": "dist/es/src/index.d.ts",
+  "type": "module",
+  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "typings": "dist/types/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/src/index.d.ts"
+    }
+  },
   "scripts": {
-    "push": "npm publish --registry http://npm.bsnweb.site/ && npm publish --access public --registry https://registry.npmjs.org",
+    "push": "npm publish --registry http://npm.bsnbase.top/ && npm publish --access public --registry https://registry.npmjs.org",
     "test": "jest",
     "dev": "rollup -c -w",
-    "build": "rollup -c",
-    "build:prod": "rm -rf packages && rollup -c && mkdir packages && mv dist packages && cp -f package.json packages && cp -f README.md packages",
+    "build:esm": "BUILD_FORMAT=esm rollup -c && mv dist/esm/types dist",
+    "build:cjs": "BUILD_FORMAT=cjs rollup -c && mv dist/cjs/types dist",
+    "packages": "rm -rf packages && mkdir packages",
+    "build:prod": "npm run build:esm && npm run build:cjs && npm run packages && mv dist packages && cp -f package.json packages && cp -f README.md packages",
     "lint:es": "eslint src --fix --ext .tsx --ext .ts",
     "tslint": "tsc --noEmit"
   },
@@ -60,6 +71,9 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@rollup/plugin-replace": "^6.0.1",
+    "dayjs": "^1.11.18",
+    "dotenv": "^17.2.3",
     "glob": "^10.4.5",
     "lodash": "^4.17.21"
   }

@@ -82,9 +82,7 @@ export class CSSUtils {
   static getCSSPropertyValue(property: string, _dom?: HTMLElement): string {
     checkDocument();
 
-    if (typeof getComputedStyle === 'undefined') return '';
-
-    return getComputedStyle(_dom ?? document.documentElement)
+    return (_dom ?? document.documentElement).style
       .getPropertyValue(property)
       .trim();
   }

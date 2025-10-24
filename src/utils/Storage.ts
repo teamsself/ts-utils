@@ -8,7 +8,7 @@ interface IStorage<T> {
 /**
  * 可统一设置 LocalStorage 的 key 前缀
  */
-const prefix = 'MY_APP_';
+const prefix = 'APP_';
 /**
  * Storage 封装类：用于类型安全地操作 localStorage
  * 提供 get / set / remove 接口，自动处理 JSON 序列化、反序列化及异常情况

@@ -1,14 +1,7 @@
-/*
- * @Author: W·S
- * @Date: 2023-11-14 10:56:12
- * @LastEditors: W·S
- * @LastEditTime: 2023-11-14 10:58:04
- * @Description: Description
- */
 import { escape } from 'lodash';
 
 /**
- * 转移Html字符串
+ * 转义Html字符串
  * 转义string中的 "&", "<", ">", '"', "'", 和 "`" 字符为HTML实体字符
  *
  * Converts the characters "&", "<", ">", '"', "'", and "`" in string to their corresponding HTML entities.
